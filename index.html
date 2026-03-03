@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ammouryy 💙</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    background: linear-gradient(to bottom, #007bff, #00c6ff);
+    overflow: hidden;
+    color: white;
+    text-align: center;
+}
+
+/* Pages */
+.page {
+    display: none;
+    padding: 40px;
+    height: 100vh;
+}
+
+.active {
+    display: block;
+}
+
+/* Balloon */
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50%;
+    animation: float 10s infinite;
+}
+
+.balloon:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background: white;
+    left: 50%;
+    top: 70px;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-120vh); }
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background: white;
+    color: #007bff;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 0 15px white;
+}
+
+button:hover {
+    background: #ffcc00;
+    color: black;
+}
+
+img {
+    max-width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px white;
+}
+
+.cake {
+    font-size: 80px;
+}
+
+h1 {
+    font-size: 50px;
+    text-shadow: 0 0 20px white;
+}
+
+p {
+    font-size: 20px;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+    <h1>🎉 Happy Birthday Ammouryy 💙</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg">
+    <p>
+        Today is a very special day because the most amazing person was born! Ammouryy,
+        may your life shine brighter than the stars and stronger than Cristiano Ronaldo's goals!
+        May success follow you everywhere and happiness never leave your heart.
+    </p>
+    <button onclick="nextPage(2)">Press to Continue 🎈</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+    <h1>🎂 A Special Wish For You Ammouryy 💙</h1>
+    <div class="cake">🎂</div>
+    <p>
+        On this beautiful birthday, I wish you unlimited happiness, powerful success,
+        big dreams that come true, and moments filled with love.
+        Just like Ronaldo never gives up on the field, never give up on your dreams!
+        You deserve greatness, joy, and all the beautiful things in this world.
+    </p>
+    <button onclick="nextPage(3)">Next Page 🎉</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+    <h1>⚽ Champion Spirit Ammouryy 💙</h1>
+    <p>
+        You are strong. You are unique. You are unstoppable.
+        May this year bring victories in everything you do.
+        May your smile shine brighter than stadium lights,
+        and may your confidence be as powerful as Cristiano Ronaldo scoring the winning goal!
+        Keep believing, keep shining, keep being incredible.
+    </p>
+    <button onclick="nextPage(4)">Final Surprise 🎈</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+    <h1>💙 Forever Amazing Ammouryy 💙</h1>
+    <p>
+        Ammouryy, this birthday is not just a celebration of your age,
+        but a celebration of your kindness, your strength, and your beautiful soul.
+        May every step you take lead to happiness.
+        May every dream you dream turn into reality.
+        Stay blessed, stay powerful, and stay awesome forever.
+        Happy Birthday again, Champion! 🎉🎂⚽💙
+    </p>
+    <div class="cake">🎂🎂🎂</div>
+</div>
+
+<script>
+function nextPage(pageNumber) {
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+    document.getElementById('page' + pageNumber).classList.add('active');
+}
+
+/* Create MANY balloons */
+for (let i = 0; i < 60; i++) {
+    let balloon = document.createElement('div');
+    balloon.className = 'balloon';
+    balloon.style.left = Math.random() * 100 + "vw";
+    balloon.style.backgroundColor = 
+        "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+    balloon.style.animationDuration = (5 + Math.random() * 5) + "s";
+    document.body.appendChild(balloon);
+}
+</script>
+
+</body>
+</html>
